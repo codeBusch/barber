@@ -1,1 +1,1 @@
-barber repo
+SoftITo barber project
