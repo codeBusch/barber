@@ -24,8 +24,8 @@ export class ProductComponent implements OnInit {
 
 
   getList(){
-    this.productService.getAll().subscribe(result=>{
-      this.products=result.data;
+    this.productService.getAll().subscribe(res=>{
+      this.products=res.data;
     });
   }
   isImage(url:string|null){
