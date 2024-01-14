@@ -22,6 +22,7 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
+                                        <th>Personnel</th>
                                         <th>Full Name</th>
                                         <th>Phone Number</th>
                                         <th>E-Mail</th>
@@ -32,14 +33,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    
                                     <tr *ngFor="let appointment of appointments">
                                         <td>{{ appointment.id }}</td>
+                                        <td>{{ findUserById(appointment.userId)?.firstName }}</td>
                                         <td>{{ appointment.fullName }}</td>
                                         <td>{{ appointment.phoneNumber }}</td>
                                         <td>{{ appointment.email }}</td>
                                         <td>{{ appointment.startDate }}</td>
                                         <td>{{ appointment.endDate }}</td>
                                         <td>{{ appointment.isCompleted ? 'Yes' : 'No' }}</td>
+
   
   
                                         <td>

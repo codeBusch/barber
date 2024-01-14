@@ -1,9 +1,11 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
   import { ToastrService } from 'ngx-toastr';
   import { Appointment } from '../../../../models/appointment';
   import { AppointmentService } from '../../../../services/appointment.service';
   import { CommonModule } from '@angular/common';
+import { UserService } from '../../../../services/user.service';
+import { User } from '../../../../models/user';
 
   @Component({
     selector: 'app-appointment-update',
@@ -12,13 +14,18 @@ import { Component, EventEmitter, Output } from '@angular/core';
     templateUrl: './appointment-update.component.html',
     styleUrl: './appointment-update.component.scss'
   })
-  export class AppointmentUpdateComponent {
+  export class AppointmentUpdateComponent implements OnInit {
+    users:User[]=[];
     updateForm!: FormGroup;
     @Output() onLoad: EventEmitter<unknown> = new EventEmitter();
     constructor(
       private formBuilder: FormBuilder,
       private toastrService: ToastrService,
-      private appointmentService: AppointmentService) { }
+      private appointmentService: AppointmentService,
+      private userService:UserService) { }
+    ngOnInit(): void {
+      this.getAllUsers();
+    }
 
     createUpdateForm(appointment: Appointment) {
       this.updateForm = this.formBuilder.group({
@@ -26,6 +33,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
         fullName: [appointment.fullName, Validators.required],
         phoneNumber: [appointment.phoneNumber, Validators.required],
         email: [appointment.email, Validators.required],
+        userId:['',Validators.required],
         startDate: [appointment.startDate, Validators.required],
         endDate: [appointment.endDate, Validators.required],
         completed: [appointment.isCompleted, Validators.required],
@@ -33,6 +41,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 
 
+      })
+    }
+    getAllUsers(){
+      this.userService.getAll().subscribe(res=>{
+        this.users=res.data;
       })
     }
     onSubmit() {
