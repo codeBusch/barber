@@ -33,6 +33,6 @@ export const routes: Routes = [
         {path:'services',component:ServiceComponent},
         {path:'categories',component:CategoryComponent},
         {path:'products',component:ProductComponent},
-        {path:'gellery',component:PhotoComponent},
+        {path:'gallery',component:PhotoComponent},
     ]}
 ];
