@@ -15,6 +15,9 @@ import { CategoryService } from './services/category.service';
 import { CategoryComponent } from './admin/components/category/category.component';
 import { ProductComponent } from './admin/components/product/product.component';
 import { PhotoComponent } from './admin/components/photo/photo.component';
+import { AppointmentComponent } from './admin/components/appointment/appointment.component';
+import { LeaveComponent } from './admin/components/leave/leave.component';
+import { OrderComponent } from './admin/components/order/order.component';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent},
@@ -34,5 +37,8 @@ export const routes: Routes = [
         {path:'categories',component:CategoryComponent},
         {path:'products',component:ProductComponent},
         {path:'gallery',component:PhotoComponent},
+        {path:'appointments',component:AppointmentComponent},
+        {path:'leaves',component:LeaveComponent},
+        {path:'orders',component:OrderComponent},
     ]}
 ];
