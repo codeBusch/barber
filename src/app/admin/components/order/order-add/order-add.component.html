@@ -1,0 +1,41 @@
+
+<!-- Create Modal example -->
+<div class="modal fade create-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="card shadow-none border-0 p-3 pb-0">
+                <div class="card-title">
+                    <h4>Create Order</h4>
+                </div>
+                <div class="card-body" *ngIf="createForm">
+                    <form  [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label" for="full-name-input">Full Name</label>
+                            <input type="text" class="form-control" formControlName="fullName" id="full-name-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="phone-number-input">Customer Phone Number</label>
+                            <input type="text" class="form-control" formControlName="phoneNumber" id="phone-number-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="email-input">Customer Email</label>
+                            <input type="text" class="form-control" formControlName="email" id="email-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="send-date-input">Send Date</label>
+                            <input type="datetime-local" class="form-control" formControlName="sendDate" id="send-date-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="cargo-branch-input">Cargo Branch</label>
+                            <input type="text" class="form-control" formControlName="cargoBranch" id="cargo-branch-input">
+                        </div>
+                        <div class="">
+                            <button class="btn btn-warning d-block ms-auto">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

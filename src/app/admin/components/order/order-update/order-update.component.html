@@ -1,0 +1,45 @@
+
+<!-- Update Modal example -->
+<div class="modal fade edit-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="card shadow-none border-0 p-3 pb-0">
+                <div class="card-title">
+                    <h4>Update Category</h4>
+                </div>
+                <div class="card-body" *ngIf="updateForm">
+                    <form  [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label" for="full-name-input">Full Name</label>
+                            <input type="text" class="form-control" formControlName="fullName" id="full-name-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="phone-number-input">Customer Phone Number</label>
+                            <input type="text" class="form-control" formControlName="phoneNumber" id="phone-number-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="email-input">Customer Email</label>
+                            <input type="text" class="form-control" formControlName="email" id="email-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="send-date-input">Send Date</label>
+                            <input type="datetime-local" class="form-control" formControlName="sendDate" id="send-date-input">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="cargo-branch-input">Cargo Branch</label>
+                            <input type="text" class="form-control" formControlName="cargoBranch" id="cargo-branch-input">
+                        </div>
+                        <!-- <div class="square-switch">
+                            <input type="checkbox" [id]="'square-switch'+claim.id" switch="none" [ngModel]="checked(claim)" (ngModelChange)="changeSwitch(claim)"/>
+                            <label [for]="'square-switch'+claim.id" >{{(checked(claim)?'On':'Off')}}</label>
+                        </div> -->
+                        <div class="">
+                            <button class="btn btn-warning d-block ms-auto">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
