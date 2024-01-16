@@ -1,4 +1,4 @@
-# Barber - Admin template and Starter project for Angular
+# Barber - Admin template and Starter project for Angular 16
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
 
