@@ -40,5 +40,6 @@ export const routes: Routes = [
         {path:'appointments',component:AppointmentComponent},
         {path:'leaves',component:LeaveComponent},
         {path:'orders',component:OrderComponent},
-    ]}
+    ]},
+    {path:"**",component:HomeComponent}
 ];
